@@ -28,6 +28,7 @@ import MarkingSchema from "./Components/PanelViewMarkingSchem/ViewMarkingSchem";
 import SupMarkingSchema from "./Components/SupViewMarkingShem/SupervisorMarkingShem";
 import AdminDashBord from "./Components/AdminDashbord/Admindashbord";
 import DownloadDocs from "./Components/SubmisionsDownload/DownloadSubmitions";
+import EmailToPanel from "./Components/SendEmailToPanelMember/EmailtoPanel";
 import Em from "./Components/Email/Em";
 import CreateMarkingScheme from "./Components/CreateMarkingScheme/CreateMarkingScheme";
 
@@ -64,6 +65,7 @@ function App() {
         <Route path="/supmarkingschem" component={SupMarkingSchema}/>
         <Route path="/markingshechem" component={MarkingSchema} />
         <Route path="/downloaddoc" component={DownloadDocs} />
+        <Route path="/emailtopanel/:email/:password" component={EmailToPanel} />
         <Route path="/" component={Footer} />
        
       </switch>
