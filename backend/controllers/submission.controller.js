@@ -29,7 +29,14 @@ const getAllSubmissions = (req, res) => {
     })
 }
 
+const submission = {
+    totalSubmissions: function(prev, current) {
+        return prev + current;
+    }
+}
+
 module.exports = {
     addNewSubmission,
-    getAllSubmissions
+    getAllSubmissions,
+    submission
 }

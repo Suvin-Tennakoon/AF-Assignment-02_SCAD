@@ -38,6 +38,12 @@ app.use('/api/submission', submissionRoutes);
 const markingSchemeRoutes = require('./routes/markingScheme.routes');
 app.use('/api/markingScheme', markingSchemeRoutes);
 
-app.listen(3001, () => {
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
     console.log("Server is Running");
 });
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static())
+}

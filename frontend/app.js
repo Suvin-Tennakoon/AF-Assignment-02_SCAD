@@ -31,6 +31,7 @@ import DownloadDocs from "./Components/SubmisionsDownload/DownloadSubmitions";
 import EmailToPanel from "./Components/SendEmailToPanelMember/EmailtoPanel";
 import Em from "./Components/Email/Em";
 import CreateMarkingScheme from "./Components/CreateMarkingScheme/CreateMarkingScheme";
+import ErrorPage from "./Components/ErrorPage/ErrorPage";
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
         <Route path="/markingshechem" component={MarkingSchema} />
         <Route path="/downloaddoc" component={DownloadDocs} />
         <Route path="/emailtopanel/:email/:password" component={EmailToPanel} />
+        <Route path="/errorPage" component={ErrorPage} />
         <Route path="/" component={Footer} />
        
       </switch>

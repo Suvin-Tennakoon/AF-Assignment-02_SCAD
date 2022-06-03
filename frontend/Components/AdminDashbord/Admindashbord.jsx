@@ -1,16 +1,26 @@
 import React, {Component} from "react";
 import axios from "axios";
 import "./MenuStyle.css";
+import LogOutBtn from "../LogoutBtn/LogOutBtn";
 
 export default class AdminDashBord extends React.Component {
     constructor(props) {
         super(props);
+
+    }
+
+    componentDidMount() {
+        if(localStorage.getItem('admin') != 'Authorized'){
+            window.location = '/errorPage';
+        }
     }
 
     render() {
         return (
             <div className="container">
                 <br/>
+                <div style={{float:"right"}}><LogOutBtn/></div>
+                <br/><br/>
                 <div
                     className="card mb-3 suvincard"
                     style={{width: "540px;"}}

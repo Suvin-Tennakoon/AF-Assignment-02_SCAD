@@ -23,6 +23,11 @@ class Createsubmision extends Component {
     };
   }
 
+  componentDidMount() {
+    if(localStorage.getItem('admin') != 'Authorized'){
+      window.location = '/errorPage';
+    }
+  }
 
 
   setDeadline(e) {
@@ -60,7 +65,7 @@ class Createsubmision extends Component {
       })
       .then(() => {
         alert("Submition Added Successfully");
-        //window.location="/"
+        window.location="/adminDashBrd"
       })
       .catch((err) => {
         alert(err.message);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 
 import "./CrMrSc.css";
@@ -46,17 +46,25 @@ function CreateMarkingScheme() {
       .post("http://localhost:3001/api/markingScheme/add", data)
       .then(() => {
         alert("Added Marking Scheme Successfully");
-        window.location = "/";
+        window.location = "/adminDashBrd";
       })
       .catch((err) => {
         alert(err.message);
       });
   };
 
+  useEffect(() =>{
+    if(localStorage.getItem('admin') != 'Authorized'){
+      window.location = '/errorPage';
+    }
+  },[])
+
   return (
     <div>
       <br />
+
       <div class="container register">
+
         <div class="row">
           <div class="col-md-3 register-left">
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
